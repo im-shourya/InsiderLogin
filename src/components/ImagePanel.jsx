@@ -1,0 +1,82 @@
+import { useState, useEffect } from 'react';
+
+const slides = [
+  {
+    bg: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=800&q=80',
+  },
+  {
+    bg: 'https://images.unsplash.com/photo-1542401886-65d6c61de115?w=800&q=80',
+  },
+  {
+    bg: 'https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=800&q=80',
+  },
+];
+
+export default function ImagePanel() {
+  const [active, setActive] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setFading(true);
+      setTimeout(() => {
+        setActive(prev => (prev + 1) % slides.length);
+        setFading(false);
+      }, 500);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div className="relative h-full rounded-xl overflow-hidden select-none" style={{ minHeight: '560px' }}>
+
+      <div
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${fading ? 'opacity-0' : 'opacity-100'}`}
+        style={{ backgroundImage: `url(${slides[active].bg})` }}
+      />
+
+
+      <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(43,30,62,0.3) 0%, rgba(43,30,62,0.15) 40%, rgba(43,30,62,0.6) 70%, rgba(43,30,62,0.95) 100%)' }} />
+
+      <div className="absolute top-7 left-7 z-10">
+        <svg width="72" height="24" viewBox="0 0 72 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+          <path d="M2 22L10 3L18 22" stroke="#e6e6fa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M5.5 15H14.5" stroke="#e6e6fa" strokeWidth="2.5" strokeLinecap="round"/>
+
+          <path d="M24 22V3L32 14L40 3V22" stroke="#e6e6fa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+
+          <path d="M48 3V16C48 19.866 50.686 22 54 22C57.314 22 60 19.866 60 16V3" stroke="#e6e6fa" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      </div>
+
+      <div className="absolute top-6 right-6 z-10">
+        <button className="flex items-center gap-1.5 text-silver/90 hover:text-white text-xs bg-white/10 hover:bg-white/15 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 transition-all duration-200">
+          <span>Back to website</span>
+          <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </button>
+      </div>
+
+      <div className={`absolute bottom-10 left-0 right-0 px-8 z-10 transition-opacity duration-500 ${fading ? 'opacity-0' : 'opacity-100'}`}>
+        <h2 className="text-[#e6e6fa] text-[1.6rem] leading-snug mb-7 text-center" style={{ fontFamily: "'FreeSans', sans-serif" }}>
+          Capturing Moments,<br />Creating Memories
+        </h2>
+
+
+        <div className="flex gap-2 justify-center">
+          {slides.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setActive(i)}
+              className={`h-[3px] rounded-full transition-all duration-300 ${
+                i === active ? 'bg-white w-8' : 'bg-white/35 w-5 hover:bg-white/55'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
