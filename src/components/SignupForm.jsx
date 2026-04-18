@@ -28,7 +28,7 @@ export default function SignupForm() {
         </h1>
         <p className="text-[#a0a0b8] text-sm mt-2.5">
           Already have an account?{' '}
-          <a href="#" className="text-[#a490c2] hover:text-[#c4b4e0] underline underline-offset-4 transition-colors">
+          <a href="signin" className="text-[#a490c2] hover:text-[#c4b4e0] underline underline-offset-4 transition-colors">
             Log in
           </a>
         </p>
