@@ -5,7 +5,7 @@ import tealCurve from '../assets/teal-curve.svg';
 export default function HeroSection() {
   return (
     <section
-      className="relative flex-1 flex items-center overflow-hidden px-8 pt-6 pb-0"
+      className="relative flex-1 flex items-center overflow-hidden px-4 sm:px-6 md:px-8 pt-6 pb-0"
       style={{ minHeight: '480px' }}
     >
       <div
@@ -64,13 +64,13 @@ export default function HeroSection() {
         </div>
       </div>
 
-      <div className="absolute right-[6%] bottom-0 z-10 flex items-end justify-center pointer-events-none select-none">
+      <div className="absolute right-[6%] bottom-0 z-10 hidden sm:flex items-end justify-center pointer-events-none select-none">
         <img
           src="/mascot.png"
           alt="Picksell mascot"
           className="mascot-float"
           style={{
-            width: 'clamp(460px, 50vw, 500px)',
+            width: 'clamp(240px, 45vw, 500px)',
             filter: 'drop-shadow(0 30px 60px rgba(0,0,0,0.45))',
           }}
         />

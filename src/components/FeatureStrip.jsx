@@ -27,7 +27,7 @@ const FEATURES = [
 export default function FeatureStrip() {
   return (
     <section
-      className="relative z-10 px-8 py-10"
+      className="relative z-10 px-4 sm:px-6 md:px-8 py-10"
       style={{ backgroundColor: 'rgba(31,29,53,0.97)' }}
     >
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">

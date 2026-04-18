@@ -10,7 +10,7 @@ export default function SigninForm() {
     return (
         <div className="flex flex-col justify-center w-full">
             <div className="mb-7">
-                <h1 className="text-[2rem] font-bold text-white leading-tight tracking-tight">
+                <h1 className="text-2xl sm:text-[2rem] font-bold text-white leading-tight tracking-tight">
                     Welcome back
                 </h1>
                 <p className="text-[#a0a0b8] text-sm mt-2.5">Don't have an account?{' '}
@@ -60,7 +60,7 @@ export default function SigninForm() {
                     Or Continue with</span>
                 <div className=" flex-1 h-[1px] bg-[#3a3252]"/>
             </div>
-            <div className="grid grid-cols-2 gap-3.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <SocialButton provider="Google" icon={<img src={googleIcon} alt="Google" className="w-[18px] h-[18px]" />} />
                 <SocialButton provider="Apple" icon={<img src={appleIcon} alt="Apple" className="w-[18px] h-[18px]" />} />
             </div>

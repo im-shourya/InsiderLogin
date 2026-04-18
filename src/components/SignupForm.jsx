@@ -11,7 +11,7 @@ export default function SignupForm() {
   return (
     <div className="flex flex-col justify-center w-full">
       <div className="mb-7">
-        <h1 className="text-[2rem] font-bold text-white leading-tight tracking-tight">
+        <h1 className="text-2xl sm:text-[2rem] font-bold text-white leading-tight tracking-tight">
           Create an account
         </h1>
         <p className="text-[#a0a0b8] text-sm mt-2.5">
@@ -23,7 +23,7 @@ export default function SignupForm() {
       </div>
 
       <div className="space-y-3.5 mb-5">
-        <div className="grid grid-cols-2 gap-3.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
           <InputField type="text" placeholder="First name" />
           <InputField type="text" placeholder="Last name" />
         </div>
@@ -74,7 +74,7 @@ export default function SignupForm() {
         <div className="flex-1 h-px bg-[#3a3252]" />
       </div>
 
-      <div className="grid grid-cols-2 gap-3.5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
         <SocialButton provider="Google" icon={<img src={googleIcon} alt="Google" className="w-[18px] h-[18px]" />} />
         <SocialButton provider="Apple" icon={<img src={appleIcon} alt="Apple" className="w-[18px] h-[18px]" />} />
       </div>
