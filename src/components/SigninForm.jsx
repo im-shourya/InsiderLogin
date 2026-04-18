@@ -10,11 +10,11 @@ export default function SigninForm() {
     return (
         <div className="flex flex-col justify-center w-full">
             <div className="mb-7">
-                <h1 className="text-2xl sm:text-[2rem] font-bold text-white leading-tight tracking-tight">
+                <h1 className="auth-heading text-2xl sm:text-[2rem] font-bold leading-tight tracking-tight">
                     Welcome back
                 </h1>
-                <p className="text-[#a0a0b8] text-sm mt-2.5">Don't have an account?{' '}
-                    <a href="signup" className="text-[#a490c2] hover:text-[#c4b4e0] underline underline-offset-4 transition-colors">Sign up</a>
+                <p className="auth-subtext text-sm mt-2.5">Don't have an account?{' '}
+                    <a href="signup" className="link-accent underline underline-offset-4">Sign up</a>
                 </p>
             </div>
             <div className='space-y-3.5 mb-5'>
@@ -30,10 +30,8 @@ export default function SigninForm() {
                     className="sr-only"
                 />
                 <div
-                    className={`w-[18px] h-[18px] rounded-[4px] transition-all duration-200 flex items-center justify-center ${
-                    agreed
-                        ? 'bg-[#4a4e8f] border border-[#4a4e8f]'
-                        : 'border border-[#555] bg-transparent group-hover:border-[#a490c2]'
+                    className={`w-[18px] h-[18px] rounded-[4px] flex items-center justify-center ${
+                    agreed ? 'checkbox-box--checked' : 'checkbox-box'
                     }`}
                 >
                     {agreed && (
@@ -41,24 +39,21 @@ export default function SigninForm() {
                     )}
                 </div>
                 </div>
-                <span className="text-[#a0a0b8] text-xs">
+                <span className="auth-subtext text-xs">
                 I agree to the{' '}
-                <a href="#" className="text-[#a490c2] hover:text-[#c4b4e0] underline underline-offset-2 transition-colors">
+                <a href="#" className="link-accent underline underline-offset-2">
                     Terms & Conditions
                 </a>
                 </span>
             </label>
-            <button className="w-full py-3 rounded-lg font-bold text-white 
-            active:scale-[0.99] transition-all duration-200
-            mb-6" 
-            style={{ background: 'linear-gradient(135deg, #7b6ba5 0%, #a490c2 100%)' }}>
+            <button className="btn-primary w-full py-3 rounded-lg font-bold text-sm active:scale-[0.99] transition-all duration-200 mb-6">
                 Sign in
             </button>
             <div className="relative flex items-center gap-4 mb-5">
-                <div className=" flex-1 h-[1px] bg-[#3a3252]"/>
-                <span className="text-[#777] text-xs whitespace-nowrap">
+                <div className="divider-line flex-1 h-[1px]"/>
+                <span className="divider-text text-xs whitespace-nowrap">
                     Or Continue with</span>
-                <div className=" flex-1 h-[1px] bg-[#3a3252]"/>
+                <div className="divider-line flex-1 h-[1px]"/>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <SocialButton provider="Google" icon={<img src={googleIcon} alt="Google" className="w-[18px] h-[18px]" />} />

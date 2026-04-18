@@ -4,13 +4,7 @@ import FeatureStrip from '../components/FeatureStrip';
 
 export default function LandingPage() {
   return (
-    <div
-      className="min-h-screen flex flex-col"
-      style={{
-        backgroundColor: '#1f1d35',
-        fontFamily: "'FreeSans', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-      }}
-    >
+    <div className="landing-page min-h-screen flex flex-col">
       <Navbar />
       <HeroSection />
       <FeatureStrip />
