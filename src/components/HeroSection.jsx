@@ -61,14 +61,14 @@ export default function HeroSection() {
 
       <img
         src={waveFill}
-        alt=""
+        alt="fill wave"
         className="absolute bottom-0 left-0 w-full"
         style={{ zIndex: 1 }}
       />
 
       <img
         src={tealCurve}
-        alt=""
+        alt="teal curve"
         className="absolute bottom-0 left-0 w-full pointer-events-none"
         style={{ zIndex: 2 }}
       />
