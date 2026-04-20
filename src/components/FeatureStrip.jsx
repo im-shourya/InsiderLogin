@@ -26,7 +26,7 @@ const FEATURES = [
 
 export default function FeatureStrip() {
   return (
-    <section className="feature-strip relative z-10 px-4 sm:px-6 md:px-8 py-10">
+    <section className="bg-[rgba(31,29,53,0.97)] relative z-10 px-4 sm:px-6 md:px-8 py-10">
       <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
         {FEATURES.map((feature) => (
           <FeatureCard key={feature.id} {...feature} />

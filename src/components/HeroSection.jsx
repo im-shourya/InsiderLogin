@@ -8,16 +8,26 @@ export default function HeroSection() {
       className="relative flex-1 flex items-center overflow-hidden px-4 sm:px-6 md:px-8 pt-6 pb-0"
       style={{ minHeight: '480px' }}
     >
+      <style>
+        {`
+          @keyframes mascotFloat {
+            0%, 100% { transform: translateY(0px) rotate(-2deg); }
+            50%      { transform: translateY(-18px) rotate(2deg); }
+          }
+        `}
+      </style>
       <div
-        className="hero-glow absolute right-[8%] top-[10%] w-[500px] h-[500px] rounded-full pointer-events-none"
+        className="absolute right-[8%] top-[10%] w-[500px] h-[500px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(74, 78, 143, 0.35) 0%, transparent 70%)' }}
       />
       <div
-        className="hero-glow--dim absolute left-[5%] top-[20%] w-[400px] h-[400px] rounded-full pointer-events-none"
+        className="absolute left-[5%] top-[20%] w-[400px] h-[400px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(74, 78, 143, 0.18) 0%, transparent 70%)' }}
       />
 
       <div className="relative z-10 max-w-[580px] mt-4">
         <h1
-          className="auth-heading font-bold leading-tight mb-5"
+          className="text-white font-bold leading-tight mb-5"
           style={{ fontSize: 'clamp(2rem, 4vw, 3rem)' }}
         >
           The hassle-free platform
@@ -25,7 +35,7 @@ export default function HeroSection() {
           to sell globally for less
         </h1>
         <p
-          className="hero-subtitle mb-9 text-base leading-relaxed"
+          className="text-[#e6e6fa]/65 mb-9 text-base leading-relaxed"
           style={{ maxWidth: '380px' }}
         >
           Connect your bank account and
@@ -37,16 +47,17 @@ export default function HeroSection() {
           <Link
             to="/signup"
             id="cta-get-started"
-            className="btn-cta inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95"
+            className="bg-[#E5C84A] text-[#1f1d35] shadow-[0_4px_20px_rgba(229,200,74,0.35)] inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105 hover:shadow-lg active:scale-95"
           >
             Get Started
           </Link>
-          <button
+          <Link
+            to="/dashboard"
             id="cta-book-demo"
-            className="btn-outline inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:scale-105 active:scale-95"
+            className="text-[#e6e6fa] border border-[#e6e6fa]/30 bg-transparent inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 hover:bg-white/10 hover:scale-105 active:scale-95"
           >
-            Book a demo
-          </button>
+            Dashboard
+          </Link>
         </div>
       </div>
 
@@ -54,8 +65,12 @@ export default function HeroSection() {
         <img
           src="/mascot.png"
           alt="Picksell mascot"
-          className="mascot-float"
-          style={{ width: 'clamp(240px, 45vw, 500px)' }}
+          className=""
+          style={{ 
+            width: 'clamp(240px, 45vw, 500px)',
+            animation: 'mascotFloat 4s ease-in-out infinite',
+            filter: 'drop-shadow(0 30px 60px rgba(0, 0, 0, 0.45))'
+          }}
         />
       </div>
 

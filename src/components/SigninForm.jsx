@@ -10,11 +10,11 @@ export default function SigninForm() {
     return (
         <div className="flex flex-col justify-center w-full">
             <div className="mb-7">
-                <h1 className="auth-heading text-2xl sm:text-[2rem] font-bold leading-tight tracking-tight">
+                <h1 className="text-white text-2xl sm:text-[2rem] font-bold leading-tight tracking-tight">
                     Welcome back
                 </h1>
-                <p className="auth-subtext text-sm mt-2.5">Don't have an account?{' '}
-                    <a href="signup" className="link-accent underline underline-offset-4">Sign up</a>
+                <p className="text-[#a0a0b8] text-sm mt-2.5">Don't have an account?{' '}
+                    <a href="signup" className="text-[#a490c2] transition-colors duration-200 hover:text-[#c4b4e0] underline underline-offset-4">Sign up</a>
                 </p>
             </div>
             <div className='space-y-3.5 mb-5'>
@@ -31,7 +31,7 @@ export default function SigninForm() {
                 />
                 <div
                     className={`w-[18px] h-[18px] rounded-[4px] flex items-center justify-center ${
-                    agreed ? 'checkbox-box--checked' : 'checkbox-box'
+                    agreed ? 'bg-[#4a4e8f] border-[#4a4e8f]' : 'border border-[#555555] bg-transparent transition-all duration-200 hover:border-[#a490c2]'
                     }`}
                 >
                     {agreed && (
@@ -39,21 +39,21 @@ export default function SigninForm() {
                     )}
                 </div>
                 </div>
-                <span className="auth-subtext text-xs">
+                <span className="text-[#a0a0b8] text-xs">
                 I agree to the{' '}
-                <a href="#" className="link-accent underline underline-offset-2">
+                <a href="#" className="text-[#a490c2] transition-colors duration-200 hover:text-[#c4b4e0] underline underline-offset-2">
                     Terms & Conditions
                 </a>
                 </span>
             </label>
-            <button className="btn-primary w-full py-3 rounded-lg font-bold text-sm active:scale-[0.99] transition-all duration-200 mb-6">
+            <button className="text-white w-full py-3 rounded-lg font-bold text-sm active:scale-[0.99] transition-all duration-200 mb-6" style={{ background: 'linear-gradient(135deg, #7b6ba5 0%, #a490c2 100%)' }}>
                 Sign in
             </button>
             <div className="relative flex items-center gap-4 mb-5">
-                <div className="divider-line flex-1 h-[1px]"/>
-                <span className="divider-text text-xs whitespace-nowrap">
+                <div className="bg-[#3a3252] flex-1 h-[1px]"/>
+                <span className="text-[#777777] text-xs whitespace-nowrap">
                     Or Continue with</span>
-                <div className="divider-line flex-1 h-[1px]"/>
+                <div className="bg-[#3a3252] flex-1 h-[1px]"/>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <SocialButton provider="Google" icon={<img src={googleIcon} alt="Google" className="w-[18px] h-[18px]" />} />

@@ -4,7 +4,7 @@ import FeatureStrip from '../components/FeatureStrip';
 
 export default function LandingPage() {
   return (
-    <div className="landing-page min-h-screen flex flex-col">
+    <div className="bg-[#1f1d35] font-['FreeSans',_sans-serif] min-h-screen flex flex-col">
       <Navbar />
       <HeroSection />
       <FeatureStrip />
