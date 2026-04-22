@@ -70,7 +70,7 @@ export default function DashboardTransaction() {
                                 <div className="w-12 h-10 rounded-xl bg-[#eef1f6] flex items-center justify-center">
                                     <img src={transaction} alt="right" className="w-5 h-5" />
                                 </div>
-                                <p className="font-semibold text-[15px] text-[#2d332f]">>Purchased Macbook Pro</p>
+                                <p className="font-semibold text-[15px] text-[#2d332f]">Purchased Macbook Pro</p>
                             </div>
                             <span className="font-bold text-[#d9534f]">$5560.00</span>
                         </div>
