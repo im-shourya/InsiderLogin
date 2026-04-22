@@ -11,6 +11,11 @@ import bgSavingCard from '../assets/bg-saving-card.svg';
 import bgBalanceCard from '../assets/bg-balance-card.svg';
 import iconArrowRight from '../assets/icon-arrow-right.svg';
 import shapeMastercard from '../assets/shape-mastercard.svg';
+import search from '../assets/search.svg';
+import filter from '../assets/filter.svg';
+import right from '../assets/dash-right.svg';
+import chevronDownDark from '../assets/chevron-down-dark.svg';
+import DashboardTransaction from "./DashboardTransaction";
 
 export default function Dashboard() {
     return (
@@ -73,13 +78,12 @@ export default function Dashboard() {
                         <span className="text-4xl font-black tracking-tighter">9,250,000</span>
                         <div className="flex items-center gap-1 cursor-pointer font-bold text-xs ml-2 mt-2">
                             <span>INR</span>
-                            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M19 9l-7 7-7-7"></path></svg>
+                            <img src={chevronDownDark} alt="" className="w-3 h-3" />
                         </div>
                     </div>
                 </div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-6 ">
-            </div>
+             <DashboardTransaction />
         </div>
     );
 }
