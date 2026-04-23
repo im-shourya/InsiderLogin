@@ -6,10 +6,16 @@ import appleIcon from '../assets/apple.svg';
 import checkmarkIcon from '../assets/checkmark.svg';
 import { useGoogleLogin } from '@react-oauth/google';
 
+import { useNavigate } from 'react-router-dom';
+
 export default function SignupForm() {
   const [agreed, setAgreed] = useState(true);
+  const navigate = useNavigate();
   const googleLogin = useGoogleLogin({
-    onSuccess: tokenResponse => console.log(tokenResponse),
+    onSuccess: tokenResponse => {
+        console.log(tokenResponse);
+        navigate('/dashboard');
+    },
     onError: error => console.log(error),
   });
 
@@ -73,9 +79,11 @@ export default function SignupForm() {
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
-        <SocialButton provider="Google" icon={<img src={googleIcon}
-        onClick={() => googleLogin()} 
-        alt="Google" className="w-[18px] h-[18px]" />} />
+        <SocialButton 
+            provider="Google" 
+            icon={<img src={googleIcon} alt="Google" className="w-[18px] h-[18px]" />} 
+            onClick={() => googleLogin()} 
+        />
         <SocialButton provider="Apple" icon={<img src={appleIcon} alt="Apple" className="w-[18px] h-[18px]" />} />
       </div>
     </div>
