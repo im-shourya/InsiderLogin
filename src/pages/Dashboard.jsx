@@ -7,7 +7,11 @@ export default function DashboardPage() {
     return(
         <div className="bg-white"> 
             <DashboardNavbar />
-            <div className="flex">
+            <div className="hidden md:flex">
+                <Sidebar />
+                <DashboardContent /> 
+            </div>
+            <div className="md:hidden">
                 <Sidebar />
                 <DashboardContent /> 
             </div>
