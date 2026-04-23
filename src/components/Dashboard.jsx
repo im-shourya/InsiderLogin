@@ -19,7 +19,7 @@ import DashboardTransaction from "./DashboardTransaction";
 
 export default function Dashboard() {
     return (
-        <div className="flex-1 bg-white w-full p-6 sm:p-10 -ml-1 mt-[-6rem]">
+        <div className="flex-1 bg-white w-full p-4 mt-[-5rem] sm:p-10 sm:mt-[-6rem]">
             <div className="hidden md:flex absolute top-0 right-0 
             left-64 h-72 
             bg-gradient-to-r  from-[#4a3b8d] to-[#9362c4] 
